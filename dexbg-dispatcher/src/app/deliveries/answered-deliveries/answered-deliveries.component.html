@@ -1,0 +1,31 @@
+<app-page-title Title="Отговорени поръчки"></app-page-title>
+<div id="activeDeliveries">
+    <div class="delivery" *ngFor="let delivery of activeDeliveries; let i = index">
+        <div id="rightContainer">
+            <p id="date">{{delivery.date}}</p>
+            <p id="time">{{delivery.answeredTime}}</p>
+        </div>
+        <p class="category">Категория: <strong>{{delivery.type}}</strong></p>
+        <ng-template #normalDelivery>
+            <p class="address">От адрес: <strong>{{delivery.senderAddress}}</strong></p>
+            <p class="address">До адрес: <strong>{{delivery.receiverAddress}}</strong></p>
+            <p class="phone">Телефон на изпращач: <strong>{{delivery.senderPhone}}</strong></p>
+            <p class="phone">Телефон на получател: <strong>{{delivery.receiverPhone}}</strong></p>
+            <p class="timeForDelivery">Време до началао на доставка: <strong>{{delivery.timeForDelivery}} мин.</strong></p>
+        </ng-template>
+        <ng-template #buyDelivery>
+            <p class="address">Достави до: <strong>{{delivery.address}}</strong></p>
+            <p class="address">Купи от: <strong>{{delivery.buyFrom}}</strong></p>
+            <p class="phone">Телефон: <strong>{{delivery.phone}}</strong></p>
+            <p class="phone">Допълнителна информация: <textarea disabled>{{delivery.bonusInfo}}</textarea></p>
+        </ng-template>
+        <ng-template #taxiDelivery>
+            <p class="address">Достави до: <strong>{{delivery.fromAddress}}</strong></p>
+            <p class="address">Купи от: <strong>{{delivery.toAddress}}</strong></p>
+            <p class="phone">Телефон: <strong>{{delivery.phone}}</strong></p>
+            <p class="timeForDelivery">Време до начало на доставка: <strong>{{delivery.timeForDelivery}} мин.</strong></p>
+        </ng-template>
+        <ng-container *ngTemplateOutlet="delivery.type === 'достави' ? normalDelivery : delivery.type === 'купи' ? buyDelivery : taxiDelivery"></ng-container>
+        <p class="name" *ngIf="delivery.senderName !== 'anonymous'">Акаунт на изпращач: <strong>{{delivery.senderName}}</strong></p>
+    </div>
+</div>

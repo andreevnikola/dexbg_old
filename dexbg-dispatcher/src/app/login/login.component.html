@@ -1,0 +1,14 @@
+<div id="main">
+    <h1>Вход</h1>
+    <p>Въведете потрбителско име: </p>
+    <input type="text" #name placeholder="Име за административен акаунт">
+    <p>Въведете парола: </p>
+    <input type="password" #pass placeholder="Парола за административен акаунт">
+    <br>
+    <button (click)="loginHandler(name.value, pass.value)">Влез</button>
+</div>
+
+<div id="error" *ngIf="showError" [@error]>
+    <button (click)="hideErrorMessageHandler()">x</button>
+    <p>Сгрешена парола или потребителско име!</p>
+</div>

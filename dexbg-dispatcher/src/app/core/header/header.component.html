@@ -1,0 +1,17 @@
+<nav id="main">
+    <a class="functional" routerLink="deliveries/active" [ngClass]="{'newDelivery': getDataService.newDelivery}"><span>Активни поръчки</span></a>
+    <a class="functional" routerLink="deliveries/answered"><span>Отговорени поръчки</span></a>
+    <a class="functional" routerLink="/stats"><span>Статистики</span></a>
+    <a class="functional" routerLink="/askQuestion"><span>Задай въпрос</span></a>
+    <a *ngIf="!authService.key" class="log" routerLink="/login"><span>Вход</span></a>
+    <a *ngIf="authService.key" class="log" (click)="logOutHandler()"><span>Изход</span></a>
+</nav>
+
+<button id="phoneMenuStarter" (click)="menuStarterHandler()" [ngClass]="{'phoneMenuStarterClicked': isMobileMenuShown}"><i class="fa-solid fa-bars" [ngClass]="{'phoneMenuStarterClickedChild': isMobileMenuShown, 'newDeliveryPhoneStarter': (getDataService.newDelivery && !isMobileMenuShown)}"></i></button>
+<nav id="phone" [ngClass]="{'phoneMenuStarterClickedMenu': isMobileMenuShown}">
+    <div><a class="functional" routerLink="deliveries/active" [ngClass]="{'newDeliveryPhone': getDataService.newDelivery}"><span>Активни поръчки</span></a></div>
+    <div><a class="functional" routerLink="deliveries/answered"><span>Отговорени поръчки</span></a></div>
+    <div><a class="functional" routerLink="/stats"><span>Статистики</span></a></div>
+    <div><a class="functional" routerLink="/askQuestion"><span>Задай въпрос</span></a></div>
+    <div><a class="log" routerLink="/login"><span>Вход</span></a></div>
+</nav>

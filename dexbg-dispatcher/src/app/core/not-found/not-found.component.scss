@@ -1,0 +1,44 @@
+.centerChildren{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.centerParent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+a{
+    color: rgb(49, 49, 236);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    width: fit-content;
+}
+
+#notFound a :hover{
+    color: rgb(85, 85, 243);
+    text-shadow: 1px 1px 0px black;
+    transform: scale(1.05);
+    transition: 0.05s
+}
+
+#notFound h1{
+    margin-top: -30px;
+    margin-bottom: -30px;
+    font-size: 120px;
+    color: rgb(54, 54, 54);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#notFound{
+    @extend .centerChildren;
+    @extend .centerParent;
+    background: linear-gradient(45deg, rgb(233, 233, 233), rgb(226, 226, 226));
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid grey;
+}

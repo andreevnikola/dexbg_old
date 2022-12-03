@@ -1,0 +1,45 @@
+<app-page-title Title="Активни поръчки"></app-page-title>
+<div id="activeDeliveries">
+    <div id="noDeliveries" *ngIf="activeDeliveries?.length == 0">
+        <p>Няма заявени поръчки!</p>
+    </div>
+    <ng-container *ngIf="activeDeliveries?.length > 0">
+    <div class="delivery" *ngFor="let delivery of activeDeliveries; let i = index" (mouseover)="mouseOver(i)" (mouseleave)="mouseOutside(i)" (click)="chooseDelivery(i)" (focusout)="unchooseDelivery(i)" [@deliveryAnimation] [ngClass]="{'choosenFromYou': (choosenFromYou == i), 'choosenNotFromYou': ( choosenFromYou !== i && choosenNotFromYou.includes(i) )}">
+        <p id="time">{{delivery.time}}</p>
+        <p class="category">Категория: <strong>{{delivery.type}}</strong></p>
+        <ng-template #normalDelivery>
+            <p class="address">От адрес: <strong>{{delivery.senderAddress}}</strong></p>
+            <p class="address">До адрес: <strong>{{delivery.receiverAddress}}</strong></p>
+            <p class="phone">Телефон на изпращач: <strong>{{delivery.senderPhone}}</strong></p>
+            <p class="phone">Телефон на получател: <strong>{{delivery.receiverPhone}}</strong></p>
+        </ng-template>
+        <ng-template #buyDelivery>
+            <p class="address">Достави до: <strong>{{delivery.address}}</strong></p>
+            <p class="address">Купи от: <strong>{{delivery.buyFrom}}</strong></p>
+            <p class="phone">Телефон: <strong>{{delivery.phone}}</strong></p>
+            <p class="phone">Допълнителна информация: <textarea disabled>{{delivery.bonusInfo}}</textarea></p>
+        </ng-template>
+        <ng-template #taxiDelivery>
+            <p class="address">Достави до: <strong>{{delivery.fromAddress}}</strong></p>
+            <p class="address">Купи от: <strong>{{delivery.toAddress}}</strong></p>
+            <p class="phone">Телефон: <strong>{{delivery.phone}}</strong></p>
+        </ng-template>
+        <ng-container *ngTemplateOutlet="delivery.type === 'достави' ? normalDelivery : delivery.type === 'купи' ? buyDelivery : taxiDelivery"></ng-container>
+        <p class="name" *ngIf="delivery.senderName !== 'anonymous'">Акаунт на изпращач: <strong>{{delivery.senderName}}</strong></p>
+        <div class="inputs">
+            <input #confirmInput [ngClass]="{'kupiType': delivery.type == 'купи'}" type="number" placeholder="Време за пристигане на адрес на изпращач: ">
+            <button [ngClass]="{'kupiTypeBtn': delivery.type == 'купи'}" (click)="confirmDeliveryHandler(confirmInput.value, delivery, i)" id="confirm"><i class="fa-solid fa-circle-check"></i>Изпрати!</button>
+            <p id="error" *ngIf="confirmInputErrorr && delivery._id === errorId">За да ПОТВЪРДИТЕ поръчка попълнете времето за доставка!</p>
+            <hr>
+            <input #cancelInput type="text" id="cancelInput" list="canceldReasons" placeholder="Защо поръчката е отказана?">
+            <datalist id="canceldReasons">
+                <option>Нямаме свободни коли!</option>
+                <option>Неточна информация!</option>
+                <option>Непълна информация!</option>
+                <option>Несъществуващ адрес!</option>
+              </datalist>
+            <button (click)="cancelDeliveryHandler(cancelInput.value, delivery, i)" id="cancel"><i class="fa-solid fa-ban"></i>Откажи!</button>
+        </div>
+    </div>
+    </ng-container>
+</div>
