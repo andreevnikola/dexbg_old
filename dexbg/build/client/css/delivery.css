@@ -1,0 +1,269 @@
+#deliveryContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    margin-top: 30px;
+    height: fit-content;
+    max-width: 400px;
+    max-height: 600px;
+    border-radius: 10px;
+    border: 2px solid rgb(37, 37, 37);
+    box-shadow: 5px 5px 15px rgb(0, 0, 0);
+    padding-top: 2px;
+    padding-bottom: 33px;
+    background: linear-gradient(45deg, rgb(199, 199, 199), rgb(218, 218, 218), rgb(170, 170, 170));
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+#deliveryContainer input{
+    width: 70vw;
+    max-width: 245px;
+    padding: 2px;
+    margin-bottom: -5px;
+}
+
+#deliveryContainer select{
+    width: 70vw;
+    max-width: 253px;
+    padding: 2px;
+}
+
+#deliveryContainer .el{
+    width: fit-content;
+    text-align: left;
+    position: relative;
+    margin-left: -127px;
+    left: 50%;
+}
+
+#deliveryContainer p{
+    align-self: left;
+    margin-bottom: 1px;
+    margin-top: 7px;
+}
+
+#deliveryContainer .error{
+    color: red;
+    text-shadow: 0.5px 0.5px 0px black;
+}
+
+#deliveryContainer button{
+    width: 125px;
+    padding: 5px;
+    /* margin-right: -9px; */
+    /* margin-bottom: 5px; */
+}
+
+#deliveryContainer h1{
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+}
+
+#deliveryContainer .btns{
+    margin-top: 5px;
+    margin-left: -1px;
+}
+
+#calcPrice{
+    position: relative;
+    width: 243px;
+    margin-left: -127px;
+    left: 50%;
+    text-align: left;
+    margin-bottom: 5px;
+    background: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 70px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+#calcPrice h3{
+    padding: 0px;
+    font-size: 17px;
+    width: 230px;
+    margin-top: 0px;
+}
+
+#calcPrice p{
+    margin-top: -20px;
+    color: rgb(48, 48, 48);
+}
+
+#calcPrice a{
+    margin-top: 0px;
+    float: right;
+}
+
+#calcPrice h2{
+    color: rgb(241, 106, 106);
+    text-shadow: 1px 1px 0px black;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+/* #map{
+    margin-top: 25px;
+    width: 500px;
+    height: 500px;
+    z-index: 10;
+    background-color: rgb(3,0,27);
+} */
+
+#backgroundHider{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 80px);
+    top: 80px;
+    left: 0;
+    z-index: 5;
+    backdrop-filter: blur(5px);
+}
+#notify{
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgb(253, 253, 253), rgb(228, 228, 228));
+    border: 2px solid gray;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 26px;
+    width: 290px;
+    z-index: 10;
+    top: 50vh;
+    left: 50%;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+}
+
+#notify p{
+    width: 250px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: left;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+#notify h2{
+    font-size: 29px;
+}
+
+#notify h3{
+    width: 250px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: left;
+    font-size: 22px;
+}
+
+#notify .timeForDelivery{
+    font-size: 18px;
+    margin-top: -25px;
+    color: rgb(36, 36, 36);
+}
+
+#notify i{
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 145px;
+    color: rgb(63, 63, 63);
+    text-shadow: 3px 3px 5px black;
+}
+
+#notify button{
+    width: 115px;
+    padding: 5px;
+}
+
+#bonusDescription{
+    width: 247px;
+    height: 55px;
+}
+
+#bonusDataError{margin-top: -5px;
+    margin-bottom: -10px;
+}
+
+.addOnRight{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: -5px
+}
+
+.addOnLeft{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-right: -5px
+}
+
+.addOn{
+    width: 30px !important;
+    padding: 2px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    margin-top: 1px;;
+    border: 1px solid grey;
+    transition: 0.25s;
+}
+
+.addOn:hover{
+    color: blue;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.705);
+}
+
+.addressInp{
+    width: 187px !important;
+}
+
+#mapContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, rgb(253, 253, 253), rgb(228, 228, 228));
+    z-index: 5;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    width: 310px;
+    border: 2px solid grey;
+}
+
+#mapContainer p{
+    font-size: 22px;
+}
+
+#mapContainer button{
+    width: 151px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#map{
+    background-color: wheat;
+    height: 200px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}

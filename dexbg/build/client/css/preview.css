@@ -1,0 +1,206 @@
+#childChildContainer{
+    width: 85vw;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+}
+
+#main_promoter{
+    height: 95vh;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#info{
+    position: relative;
+    display: flex;
+    top: 0px;
+    z-index: 1;
+    height: 95vh;
+    align-items: center;
+    padding-left: 15px;
+    width: 70vw;
+}
+
+#glaven_info{
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#whyDex{
+    margin-top: -30px;
+    color: rgba(224, 224, 224, 0.858);
+    font-size: 30px;
+}
+
+#functions{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.option{
+    display: inline-block;
+    margin-right: 20px;
+    width: fit-content;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(45deg, rgba(186, 186, 186, 0.338), rgba(186, 186, 186, 0.144));
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1);
+}
+
+.option:hover{
+    box-shadow: 5px 5px 15px black;
+    transform: scale(1.05);
+}
+
+#posedIcon{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+#backdropImage{
+    width: 300px;
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    right: 7.5vw;
+}
+
+#slogan{
+    position: absolute;
+    right: 7.5vw;
+    width: 40vh;
+    top: 30vh;
+    margin-right: -50px;
+    transform: rotate(270deg);
+}
+
+
+
+
+@media screen and (max-width: 1250px){
+    #backdropImage{
+        right: 0px;
+    }
+    #childChildContainer{
+        width: 100vw;
+        margin-left: 0vw;
+        margin-right: 0vw;
+    }
+    #slogan{
+        right: -35px!important;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 980px){
+    #whyDex{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #infTxt{
+        position: absolute;
+        top: 120px;
+    }
+    #whyDex{
+        font-size: 25px;
+        margin-right: 15px;
+        margin-left: -15px;
+        margin-top: -15px;
+    }
+    #whyDex li{
+        margin-bottom: 10px;
+    }
+    #slogan{
+        top: 630px;
+        margin-top: -260px;
+        transform: rotate(0deg);
+        width: 300px;
+        float: left;
+        left: 50%;
+        margin-left: -150px;
+    }
+    #backdropImage{
+        display: none;
+    }
+    #info{
+        margin-top: 0px;
+        width: 99vw;
+        height: 100vh;
+        height: 650px;
+    }
+    #glaven_info{
+        font-size: 40px;
+    }
+    .option{
+        margin-right: 1px;
+        font-size: 12px;
+    }
+    #posedIcon{
+        font-size: 35px;
+    }
+    #functions{
+        margin-left: -20px;
+        margin-top: 20px;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        top: 500px;
+    }
+    #fnN{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+    #shopFrom{margin-right: 0px;}
+    #main_promoter{
+        height: 650px;
+    }
+}
+
+@media screen and (max-height: 720px) {
+    #whyDex li{
+        margin-bottom: 4px;
+    }
+    #info{
+        margin-top: -20px;
+        height: 560px;
+    }
+    #info ul{
+        margin-top: 0px;
+    }
+    #functions{
+        top: 420px;
+    }
+    #main_promoter{
+        height: 555px;
+    }
+    #slogan{
+        width: 300px;
+    }
+    #backdropImage{display: none;}
+}
+
+@media (max-height: 720px) and (max-width: 800px){
+    #slogan{
+        top: 530px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    #whyDex{
+        font-size: 15px !important;
+    }
+}

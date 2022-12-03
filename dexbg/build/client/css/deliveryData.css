@@ -1,0 +1,120 @@
+#container{
+    position: absolute;
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    min-width: 295px;
+    max-width: 350px;
+    transform: translate(-50%, calc(-50% + 10px));
+    border-radius: 10px;
+    border: 1px solid black;
+    background: linear-gradient(45deg, rgb(233, 233, 233), rgb(214, 214, 214));
+}
+
+#container .warning{
+    color: orangered;
+    text-align: center;
+    text-shadow: 1px 1px 0px black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#container button{
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 195px;
+    margin-top: 10px;
+    color: rgb(204, 1, 1);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#container button:hover{
+    /* border: 2px solid black; */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.233);
+}
+
+#container .status{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+}
+ 
+#container .status strong{
+    color: rgb(51, 121, 226);
+    font-weight: bold;
+    padding: 5px;
+    font-size: 22px;
+    text-shadow: 1px 1px 0px black;
+}
+
+#container h2{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+#container p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#container textarea{
+    width: 245px;
+    height: 50px;
+}
+
+#backgroundHider{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 80px);
+    top: 80px;
+    left: 0;
+    z-index: 5;
+    backdrop-filter: blur(5px);
+}
+#notify{
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgb(253, 253, 253), rgb(228, 228, 228));
+    border: 2px solid gray;
+    padding: 25px;
+    font-weight: bolder;
+    font-size: 26px;
+    width: 280px;
+    z-index: 10;
+    top: 50vh;
+    left: 50%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+#notify i{
+    margin-bottom: 10px;
+    font-size: 145px;
+    color: rgb(63, 63, 63);
+    text-shadow: 3px 3px 5px black;
+}
+
+.opisanie{
+    color: rgb(37, 37, 37);
+    font-size: 14px;
+    margin-top: -5px !important;
+}
+
+#statusCanceled strong{
+    font-size: 30px !important;
+    color: red !important;
+}
